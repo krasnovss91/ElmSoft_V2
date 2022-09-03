@@ -15,18 +15,20 @@ public class TriangleServiceImpl implements TriangleService {
 
     @Override
     public BigDecimal getPerimetre(BigDecimal a, BigDecimal b, BigDecimal c) {
+         //   public BigDecimal getPeimetre(){
+       // controller.getTriangle()
         BigDecimal d = new BigDecimal("2.0");
         return (a.add(b).add(c)).divide(d);
     }
 
     @Override
-    public Double getArea(Triangle triangle) {
+    public double getArea(Triangle triangle) {
         BigDecimal p = getPerimetre(triangle.getA(), triangle.getB(), triangle.getC());//получить результат с контроллера
 
         BigDecimal a = p.subtract(triangle.getA());
         BigDecimal b = p.subtract(triangle.getB());
         BigDecimal c = p.subtract(triangle.getC());
 
-        return Math.sqrt((p.multiply(a).multiply(b).multiply(c))
+        return Math.sqrt((p.multiply(a).multiply(b).multiply(c)).doubleValue());
     }
 }
