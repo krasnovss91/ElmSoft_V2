@@ -17,8 +17,8 @@ public class Controller {
 
     @GetMapping("/triangle")
     public double getTriangle(@RequestParam BigDecimal a, @RequestParam BigDecimal b, @RequestParam BigDecimal c) {
-        Triangle triangle = new Triangle(a,b,c);
+        Triangle triangle = new Triangle(a, b, c);
 
-        return  triangleService.getArea(triangle);
+        return triangleService.getArea(triangle);
     }
 }
